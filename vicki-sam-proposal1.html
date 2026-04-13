@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vicki & Sam · A Celebration in Japan · Married in Japan</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f7f3ec; --cream-dark:#ede6d6; --dark:#1a1612;
+  --burgundy:#6b1d2c; --gold:#b8924a;
+  --serif:'Cormorant Garamond', serif; --sans:'Sen', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--dark);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+section{padding:120px 8%;position:relative}
+.serif{font-family:var(--serif)}
+h1,h2,h3,h4,h5{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(3rem,7vw,6rem)}
+h2{font-size:clamp(2.2rem,4.5vw,3.8rem);margin-bottom:.5em}
+h3{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:.4em}
+h4{font-size:1.5rem;margin-bottom:.3em}
+h5{font-size:1.2rem;margin-bottom:.3em;color:var(--burgundy)}
+p{margin-bottom:1em;font-size:1.05rem}
+.eyebrow{font-family:var(--sans);font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1.5rem;display:block}
+.amp{font-family:var(--serif);font-style:italic;color:var(--burgundy);font-weight:400}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 1s ease, transform 1s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.container{max-width:1100px;margin:0 auto}
+.narrow{max-width:780px;margin:0 auto}
+
+.img-placeholder{
+  border:2px dashed var(--gold);
+  background:var(--cream-dark);
+  padding:80px 30px;text-align:center;
+  margin:2.5rem 0;border-radius:4px;
+  font-family:var(--sans);font-size:.85rem;color:#5a4a3a
+}
+.img-placeholder strong{display:block;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--burgundy);margin-bottom:.5rem;letter-spacing:.05em}
+.hero-image,.content-image{margin:2.5rem 0;overflow:hidden;border-radius:2px;box-shadow:0 20px 60px rgba(26,22,18,.15)}
+.hero-image img,.content-image img{width:100%;height:auto;display:block;object-fit:cover}
+.hero-image img{max-height:75vh}
+.content-image img{max-height:900px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:var(--cream);padding:80px 8% 60px}
+.hero h1{margin-bottom:1rem}
+.hero .sub-title{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--burgundy);margin-bottom:1.5rem}
+.hero .lede{max-width:560px;font-size:1.15rem;color:#3a3530}
+
+/* STORY */
+.story{background:var(--cream)}
+.pull-quote{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.5rem,2.6vw,2rem);
+  color:var(--burgundy);
+  border-left:3px solid var(--gold);
+  padding:1rem 0 1rem 2rem;margin:2.5rem 0;
+  line-height:1.4
+}
+
+/* VISION */
+.vision{background:var(--dark);color:var(--cream)}
+.vision .eyebrow{color:var(--gold)}
+.vision h2{color:var(--cream)}
+.vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.vision-item{border-top:1px solid var(--gold);padding-top:1.5rem}
+.vision-item h5{color:var(--gold);font-family:var(--serif);font-style:italic;font-size:1.4rem;margin-bottom:.5rem}
+.vision-item p{font-size:.95rem;color:#d6cdb8;margin:0}
+
+/* CONCEPTS OVERVIEW */
+.concepts-overview{background:var(--cream-dark)}
+.concept-cards{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem}
+.concept-card{background:var(--cream);padding:3rem 2.5rem;border-top:4px solid var(--burgundy)}
+.concept-card .eyebrow{color:var(--burgundy)}
+.concept-card h3{color:var(--dark)}
+.concept-card .tagline{font-family:var(--serif);font-style:italic;color:var(--burgundy);font-size:1.3rem;margin-top:.5rem}
+
+/* DEEP DIVE */
+.deep-dive{background:var(--cream)}
+.deep-dive.alt{background:var(--cream-dark)}
+
+/* TRAVEL GRAPHIC */
+.travel-graphic{
+  background:var(--cream);border:1px solid var(--gold);
+  padding:2.5rem 2rem;margin:2.5rem 0;text-align:center
+}
+.deep-dive.alt .travel-graphic{background:var(--cream-dark)}
+.travel-graphic .eyebrow{color:var(--gold);margin-bottom:1.5rem}
+.travel-steps{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;gap:1rem}
+.travel-step{flex:1;min-width:0}
+.travel-step .step-label{font-family:var(--serif);font-size:1.2rem;color:var(--dark);display:block}
+.travel-step .step-meta{font-family:var(--serif);font-style:italic;color:var(--burgundy);font-size:.95rem;display:block;margin-top:.2rem}
+.travel-arrow{color:var(--gold);font-size:1.5rem;flex-shrink:0}
+
+/* VENUE FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0}
+.feature{border-top:1px solid var(--gold);padding-top:1rem}
+.feature .label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;display:block;margin-bottom:.3rem}
+.feature .value{font-family:var(--serif);font-size:1.15rem;color:var(--dark)}
+
+/* DAY FLOW */
+.day-flow{margin:2.5rem 0}
+.day-item{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--gold)}
+.day-time{font-family:var(--serif);font-style:italic;color:var(--burgundy);font-size:1.15rem}
+
+/* PRICING */
+.pricing-block{background:var(--dark);color:var(--cream);padding:4rem 3rem;margin:3rem 0;border-radius:2px}
+.pricing-block .eyebrow{color:var(--gold)}
+.pricing-block h3{color:var(--cream)}
+.pricing-block .intro{color:#c9c0a8;max-width:680px;margin-bottom:2.5rem}
+.tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.tier{background:#241f19;padding:2.5rem 2rem;border-top:3px solid var(--gold)}
+.tier h4{color:var(--gold);font-style:italic;margin-bottom:.3rem}
+.tier .tier-sub{font-size:.85rem;color:#a89878;margin-bottom:1.5rem}
+.line-items{list-style:none;margin:1.5rem 0}
+.line-items li{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px dotted #3a342a;font-size:.92rem;color:#d6cdb8;gap:1rem}
+.line-items li span:last-child{color:var(--cream);white-space:nowrap;font-weight:500}
+.tier-total{margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid var(--gold);display:flex;justify-content:space-between;align-items:baseline}
+.tier-total .label{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.2rem}
+.tier-total .amount{font-family:var(--serif);font-size:1.6rem;color:var(--cream)}
+.accom-note{font-size:.82rem;color:#a89878;font-style:italic;margin-top:1rem}
+.closing-note{margin-top:2rem;font-style:italic;color:#c9c0a8;font-size:.95rem;text-align:center}
+
+/* VICKI'S DAY */
+.vickis-day{background:var(--burgundy);color:var(--cream)}
+.vickis-day .eyebrow{color:var(--gold)}
+.vickis-day h2{color:var(--cream)}
+.vickis-day .pull-quote{color:var(--cream);border-left-color:var(--gold);font-size:clamp(1.6rem,3vw,2.2rem)}
+.vickis-day p{color:#f0e8d8}
+
+/* WHY MIJ */
+.why-mij{background:var(--cream)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
+.why-col h4{color:var(--burgundy);font-style:italic;margin-bottom:1.5rem}
+.why-col ul{list-style:none}
+.why-col li{padding:.6rem 0;border-bottom:1px solid var(--cream-dark);font-size:.98rem}
+.why-col li::before{content:"·";color:var(--gold);margin-right:.7rem;font-weight:700}
+.fee-callout{background:var(--cream-dark);padding:2.5rem;margin-top:3rem;border-left:4px solid var(--burgundy)}
+.fee-callout .amount{font-family:var(--serif);font-size:2.5rem;color:var(--burgundy);display:block;margin-bottom:.5rem}
+
+/* CLOSING */
+.closing{background:var(--cream-dark)}
+
+/* FOOTER */
+footer{background:var(--dark);color:var(--cream);padding:3rem 8%;text-align:center}
+footer .brand{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold);margin-bottom:.5rem}
+footer .meta{font-size:.85rem;color:#a89878}
+
+@media (max-width:768px){
+  section{padding:80px 6%}
+  .vision-grid,.concept-cards,.features-grid,.tier-grid,.why-grid{grid-template-columns:1fr}
+  .day-item{grid-template-columns:1fr;gap:.5rem}
+  .travel-steps{flex-direction:column}
+  .travel-arrow{transform:rotate(90deg)}
+  .pricing-block{padding:2.5rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container fade-in">
+    <span class="eyebrow">A Proposal · April 2026</span>
+    <h1>Vicki <span class="amp">&</span> Sam</h1>
+    <p class="sub-title">A Celebration in Japan · Spring 2027</p>
+    <p class="lede">Two ways to gather your favorite people in the place between your two worlds.</p>
+  </div>
+  <div class="container">
+    <div class="hero-image"><img src="hero.jpg" alt="Mt. Fuji over Lake Kawaguchiko"></div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="narrow fade-in">
+    <span class="eyebrow">Where this began</span>
+    <h2>A garden on the peak.</h2>
+    <p>You climbed Victoria Peak with a cover story about a photographer. Vicki's family was tucked away in the trees. The gazebo was decorated. The garden was deep enough to feel private, open enough that the people who matter could be there the moment after you said yes.</p>
+    <p>Secluded, but witnessed. Quiet, but staged for the people who matter most.</p>
+    <div class="pull-quote">Secluded but not hidden. Intimate but staged for the people who matter most.</div>
+    <p>That instinct, the one that led you to a hidden gazebo with family waiting in the wings, is the design brief for your wedding. Everything in this proposal is built around it.</p>
+    <div class="content-image"><img src="story.jpg" alt="A couple in a private Japanese garden"></div>
+  </div>
+</section>
+
+<section class="vision">
+  <div class="container fade-in">
+    <span class="eyebrow">The brief</span>
+    <h2>What you told us you want.</h2>
+    <div class="vision-grid">
+      <div class="vision-item"><h5>Casual, not formal</h5><p>Celebration over ritual. The party is the point.</p></div>
+      <div class="vision-item"><h5>Reception over ceremony</h5><p>Good food, good drinks, music, dancing, long tables.</p></div>
+      <div class="vision-item"><h5>Everyone gathered</h5><p>The format you described from your cousin's wedding. Two days together, on site, before the day itself.</p></div>
+      <div class="vision-item"><h5>Around 60 guests</h5><p>Close family and the friends who'll actually fly.</p></div>
+      <div class="vision-item"><h5>Symbolic, not legal</h5><p>Courthouse in Seattle first. Japan is purely for the celebration.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="concepts-overview">
+  <div class="container fade-in">
+    <span class="eyebrow">Two directions</span>
+    <h2>Two concepts. One brief.</h2>
+    <p class="narrow" style="margin-bottom:1rem">Both honor the same brief from different angles. One pulls everyone into the mountains under one roof. The other hides you in plain sight in the heart of Tokyo.</p>
+    <div class="concept-cards">
+      <div class="concept-card">
+        <span class="eyebrow">Concept One</span>
+        <h3>The Mountain Gathering</h3>
+        <p class="tagline">A heritage hotel in Hakone. Everyone housed, fed, and married under one roof.</p>
+      </div>
+      <div class="concept-card">
+        <span class="eyebrow">Concept Two</span>
+        <h3>The Hidden Garden</h3>
+        <p class="tagline">A secret heritage venue in the heart of Tokyo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep-dive">
+  <div class="container fade-in">
+    <span class="eyebrow">Concept One</span>
+    <h2>The Mountain Gathering.</h2>
+    <p class="narrow" style="margin-left:0">Everyone flies into Tokyo. Everyone gets on the same train. 85 minutes later, the city is gone and you're in Hakone, surrounded by cedar forest and onsen steam. Fujiya houses your entire group, feeds them, pours their drinks, and hosts the ceremony. One venue, one number, one weekend. The cousin's-wedding format you described, in its purest form.</p>
+    <div class="content-image"><img src="fujiya-exterior.jpg" alt="Fujiya Hotel exterior, Hakone"></div>
+
+    <div class="travel-graphic">
+      <span class="eyebrow">How everyone gets there</span>
+      <div class="travel-steps">
+        <div class="travel-step"><span class="step-label">Home</span><span class="step-meta">flight to Tokyo</span></div>
+        <div class="travel-arrow">→</div>
+        <div class="travel-step"><span class="step-label">Shinjuku Station</span><span class="step-meta">Romancecar, direct</span></div>
+        <div class="travel-arrow">→</div>
+        <div class="travel-step"><span class="step-label">Hakone-Yumoto</span><span class="step-meta">85 minutes</span></div>
+        <div class="travel-arrow">→</div>
+        <div class="travel-step"><span class="step-label">Fujiya Hotel</span><span class="step-meta">5 min shuttle</span></div>
+      </div>
+    </div>
+
+    <span class="eyebrow">Venue spotlight</span>
+    <h3>Fujiya Hotel & Kikka-so</h3>
+    <p>Fujiya Hotel opened in 1891 and has been hosting heads of state, artists, and travelers ever since. 120 rooms across the main building, enough to put your entire group on site. The main dining room (pictured) handles your reception in the standard package: coffered painted ceilings, deep green walls, herringbone parquet, an unmistakable Meiji-era Western-Japanese fusion. On the same grounds sits Kikka-so, a separate Meiji-era imperial villa available as a ceremony upgrade for couples who want something more intimate and traditionally Japanese. Fujiya quoted us a wedding package at ¥65,000 per person that includes venue, ceremony, the full reception meal, an open bar, and one night's accommodation per guest. That last piece is the unlock: nobody books a hotel separately, nobody coordinates check-in, the entire group sleeps where the wedding happens. The hotel also confirmed directly that the reception can include music and dancing. A real party, not a polite one.</p>
+
+    <div class="features-grid">
+      <div class="feature"><span class="label">Capacity</span><span class="value">60 guests, comfortably</span></div>
+      <div class="feature"><span class="label">Transit from Tokyo</span><span class="value">85 min, direct train</span></div>
+      <div class="feature"><span class="label">Ceremony</span><span class="value">Kikka-so villa</span></div>
+      <div class="feature"><span class="label">F&B and bar</span><span class="value">Included in package</span></div>
+      <div class="feature"><span class="label">Lodging</span><span class="value">Night one, all 60 guests</span></div>
+      <div class="feature"><span class="label">Honeymoon onsen</span><span class="value">Gora Kadan, 20 min</span></div>
+    </div>
+
+    <div class="content-image"><img src="fujiya-dining.jpg" alt="Fujiya Hotel main dining room"></div>
+    <div class="content-image"><img src="hakone-shrine-ceremony.png" alt="Traditional ceremony at Hakone Shrine"></div>
+    <div class="content-image"><img src="fujiya-aerial.png" alt="Fujiya Hotel aerial view, Hakone"></div>
+
+    <span class="eyebrow">How the days flow</span>
+    <h3>Three days in Hakone.</h3>
+    <div class="day-flow">
+      <div class="day-item"><div class="day-time">Day One / Afternoon</div><div><h5>Arrival and welcome</h5><p>Group check-in at Fujiya. Onsen, garden walk, casual welcome dinner in a private hotel room. Everyone settles in.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Morning</div><div><h5>Old Tokaido hike</h5><p>An easy historic trail. Sam's mom gets her hike. Optional, gentle, beautiful.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Afternoon</div><div><h5>Prep and quiet hours</h5><p>HMUA on site. Vicki has zero logistics to handle. Guests rest, soak, change.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Evening</div><div><h5>Ceremony at Kikka-so</h5><p>Symbolic ceremony in the villa. Short, warm, personal. No officiant theatrics.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Night</div><div><h5>Long dinner and party</h5><p>Kaiseki, open bar, music, dancing. The reception you came here for.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Three / Morning</div><div><h5>Farewell brunch</h5><p>Casual, slow, hugs. Group disperses or extends.</p></div></div>
+    </div>
+
+    <div class="content-image"><img src="nature.jpg" alt="Waterfall and autumn foliage in the Japanese countryside"></div>
+
+    <div class="pricing-block">
+      <span class="eyebrow">Concept One · Investment</span>
+      <h3>Hakone, planned to your number.</h3>
+      <p class="intro">Fujiya quoted us an all-inclusive wedding package at ¥65,000 per person, covering venue, ceremony, the full reception meal, open bar, and one night's accommodation. At 60 guests that's roughly $26,000 USD and it replaces what would normally be five or six separate line items (venue, F&B, bar, lodging, ceremony rental). It's the cleanest pricing structure of any concept we put in front of clients.</p>
+      <div class="tier-grid">
+        <div class="tier">
+          <h4>Essential</h4>
+          <p class="tier-sub">60 guests · streamlined</p>
+          <ul class="line-items">
+            <li><span>Fujiya all-inclusive package, 60 pax<br><span style="font-size:.78rem;color:#a89878">venue + ceremony + dinner + bar + 1 night lodging</span></span><span>$26,000</span></li>
+            <li><span>Photography, full day editorial</span><span>$3,500</span></li>
+            <li><span>Florals and additional styling</span><span>$2,500</span></li>
+            <li><span>Bilingual MC and music</span><span>$2,000</span></li>
+            <li><span>Hair and makeup (Vicki)</span><span>$2,200</span></li>
+            <li><span>Group transportation (Tokyo to Hakone)</span><span>$1,500</span></li>
+            <li><span>Stationery, favors, contingency</span><span>$3,000</span></li>
+            <li><span>Married in Japan planning fee</span><span>$10,000</span></li>
+          </ul>
+          <div class="tier-total"><span class="label">All-in</span><span class="amount">$50,700</span></div>
+          <p class="accom-note">Includes one night's lodging for all 60 guests. Additional nights bookable at the negotiated group rate.</p>
+          <p class="accom-note">Guests book their own hotel rooms at a negotiated group rate.</p>
+        </div>
+        <div class="tier">
+          <h4>Full Experience</h4>
+          <p class="tier-sub">60 guests · the full experience</p>
+          <ul class="line-items">
+            <li><span>Fujiya all-inclusive package, 60 pax<br><span style="font-size:.78rem;color:#a89878">venue + ceremony + dinner + bar + 1 night lodging</span></span><span>$26,000</span></li>
+            <li><span>Kikka-so villa upgrade for ceremony</span><span>$3,500</span></li>
+            <li><span>Premium menu and bar enhancement</span><span>$3,000</span></li>
+            <li><span>Photography, premium editorial</span><span>$5,200</span></li>
+            <li><span>Videography, highlight film</span><span>$3,200</span></li>
+            <li><span>Bespoke florals throughout</span><span>$5,500</span></li>
+            <li><span>DJ, bilingual MC, ceremony strings</span><span>$2,800</span></li>
+            <li><span>Hair and makeup (Vicki, full)</span><span>$2,600</span></li>
+            <li><span>Welcome dinner (60 guests, night one)</span><span>$3,200</span></li>
+            <li><span>Group hike and farewell brunch</span><span>$2,800</span></li>
+            <li><span>Group transportation, favors, contingency</span><span>$5,000</span></li>
+            <li><span>Married in Japan planning fee</span><span>$10,000</span></li>
+          </ul>
+          <div class="tier-total"><span class="label">All-in</span><span class="amount">$72,800</span></div>
+          <p class="accom-note">Includes one night's lodging for all 60 guests. Second night bookable at group rate, roughly $180–280/room depending on category.</p>
+          <p class="accom-note">Guests book their own hotel rooms at a negotiated group rate.</p>
+        </div>
+      </div>
+      <p class="closing-note">The Fujiya package is firm at ¥65K/person. The remaining line items refine slightly as we lock guest count and vendor selection.</p>
+    </div>
+  </div>
+</section>
+
+<section class="deep-dive alt">
+  <div class="container fade-in">
+    <span class="eyebrow">Concept Two</span>
+    <h2>The Hidden Garden.</h2>
+    <p>Tucked behind Togo Shrine in Harajuku, three minutes from the station, sits a heritage building most Tokyo locals walk past without knowing it's there. A private courtyard garden. A glass-walled hall lined with yakusugi cedar. On your day, the whole place is yours.</p>
+    <div class="content-image"><img src="togo-garden.jpg" alt="Togo Kinenkan private courtyard garden"></div>
+
+    <div class="travel-graphic">
+      <span class="eyebrow">How everyone gets there</span>
+      <div class="travel-steps">
+        <div class="travel-step"><span class="step-label">Home</span><span class="step-meta">flight to Tokyo</span></div>
+        <div class="travel-arrow">→</div>
+        <div class="travel-step"><span class="step-label">Tokyo hotel</span><span class="step-meta">central, walkable</span></div>
+        <div class="travel-arrow">→</div>
+        <div class="travel-step"><span class="step-label">Harajuku Station</span><span class="step-meta">3 min walk to venue</span></div>
+      </div>
+    </div>
+
+    <span class="eyebrow">Venue spotlight</span>
+    <h3>Togo Kinenkan</h3>
+    <p>A heritage building behind Togo Shrine in Harajuku, with a private courtyard garden you'd never guess was there from the street. Intimate, hidden, tucked in plain sight. The terrace handles your ceremony. Tamayura, the reception hall, has floor-to-ceiling yakusugi cedar windows that look out into the garden. We've placed multiple international couples here. The venue hosts more than 100 international weddings a year and knows exactly how to handle guests flying in from two continents.</p>
+
+    <div class="features-grid">
+      <div class="feature"><span class="label">Capacity</span><span class="value">60 guests, intimate</span></div>
+      <div class="feature"><span class="label">Location</span><span class="value">Harajuku, central Tokyo</span></div>
+      <div class="feature"><span class="label">Ceremony</span><span class="value">Garden terrace</span></div>
+      <div class="feature"><span class="label">Reception</span><span class="value">Tamayura hall</span></div>
+      <div class="feature"><span class="label">Exclusivity</span><span class="value">Privately yours, all day</span></div>
+      <div class="feature"><span class="label">International weddings</span><span class="value">100+ per year</span></div>
+    </div>
+
+    <div class="content-image"><img src="tamayura.jpg" alt="Tamayura hall at Togo Kinenkan, long-table reception setup"></div>
+    <div class="content-image"><img src="togo-terrace-wedding.png" alt="Terrace wedding reception at Togo Kinenkan"></div>
+
+    <span class="eyebrow">How the days flow</span>
+    <h3>Three days in Tokyo.</h3>
+    <div class="day-flow">
+      <div class="day-item"><div class="day-time">Day One</div><div><h5>Arrival in Tokyo</h5><p>Group settles into a central hotel. Free afternoon for jet lag, wandering, ramen.</p></div></div>
+      <div class="day-item"><div class="day-time">Day One / Evening</div><div><h5>Welcome dinner in Omotesando</h5><p>Private room, long table, the whole group. Five minutes from the venue.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Morning</div><div><h5>Activity options</h5><p>Mt. Takao hike for the outdoor crowd. Tsukiji, teamLab, or shopping for everyone else.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Afternoon</div><div><h5>Prep at the venue</h5><p>HMUA on site. Vicki has nothing to manage. Eamon and Juri run the entire ground game.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Late afternoon</div><div><h5>Terrace ceremony</h5><p>Garden, golden hour, family and friends. Short and personal.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Two / Evening</div><div><h5>Long dinner in Tamayura</h5><p>French Kaiseki, open bar, DJ, dancing. The hall is yours until late.</p></div></div>
+      <div class="day-item"><div class="day-time">Day Three / Morning</div><div><h5>Farewell brunch</h5><p>Slow morning. Then you and Vicki slip away to Hakone for the honeymoon.</p></div></div>
+    </div>
+
+    <div class="pricing-block">
+      <span class="eyebrow">Concept Two · Investment</span>
+      <h3>Togo Kinenkan.</h3>
+      <p class="intro">These figures are anchored to a real Togo Kinenkan quote we've worked with for a 90-guest May 2027 wedding, scaled to your 60-guest plan. The ranges narrow into firm numbers as we lock the final guest count and your menu choices.</p>
+      <div class="tier-grid">
+        <div class="tier">
+          <h4>Essential</h4>
+          <p class="tier-sub">60 guests · streamlined</p>
+          <ul class="line-items">
+            <li><span>Venue + ceremony (Tamayura, terrace)</span><span>$4,800</span></li>
+            <li><span>French Kaiseki dinner ($85/head)</span><span>$5,100</span></li>
+            <li><span>Open bar, welcome sparkling</span><span>$3,100</span></li>
+            <li><span>Cake, tea bar, pre-ceremony</span><span>$1,000</span></li>
+            <li><span>Photography (Togo in-house upgrade)</span><span>$2,200</span></li>
+            <li><span>Florals (Togo collection)</span><span>$1,600</span></li>
+            <li><span>Bilingual MC and sound</span><span>$1,800</span></li>
+            <li><span>Hair and makeup (Vicki)</span><span>$1,000</span></li>
+            <li><span>Stationery, gifts, contingency</span><span>$3,200</span></li>
+            <li><span>10% service charge and tax</span><span>$2,400</span></li>
+            <li><span>Married in Japan planning fee</span><span>$10,000</span></li>
+          </ul>
+          <div class="tier-total"><span class="label">All-in range</span><span class="amount">$34–38K</span></div>
+          <p class="accom-note">Guests book their own city hotels.</p>
+        </div>
+        <div class="tier">
+          <h4>Full Experience</h4>
+          <p class="tier-sub">60 guests · the full experience</p>
+          <ul class="line-items">
+            <li><span>Venue + ceremony, full package</span><span>$4,800</span></li>
+            <li><span>Premium French Kaiseki ($110/head)</span><span>$6,600</span></li>
+            <li><span>Cocktail hour with pinchos</span><span>$1,200</span></li>
+            <li><span>Premium open bar 5 hrs, sparkling</span><span>$3,500</span></li>
+            <li><span>Cake, tea bar, pre-ceremony</span><span>$1,000</span></li>
+            <li><span>External editorial photography</span><span>$5,200</span></li>
+            <li><span>Videography, highlight film</span><span>$3,200</span></li>
+            <li><span>Bespoke florals (terrace + hall)</span><span>$3,800</span></li>
+            <li><span>DJ + bilingual MC + strings</span><span>$2,800</span></li>
+            <li><span>Hair and makeup (Vicki, full)</span><span>$1,200</span></li>
+            <li><span>Welcome dinner (60 in Omotesando)</span><span>$3,200</span></li>
+            <li><span>Group activity, farewell brunch</span><span>$2,800</span></li>
+            <li><span>Stationery, gifts, contingency</span><span>$3,500</span></li>
+            <li><span>10% service charge and tax</span><span>$3,800</span></li>
+            <li><span>Married in Japan planning fee</span><span>$10,000</span></li>
+          </ul>
+          <div class="tier-total"><span class="label">All-in range</span><span class="amount">$55–60K</span></div>
+          <p class="accom-note">Guests book their own city hotels.</p>
+        </div>
+      </div>
+      <p class="closing-note">Sept/Oct 2027 dates are equally available for either concept. Mid-May is our recommendation for fresh greenery and long evenings, but Japan in early autumn is just as beautiful. Just say the word.</p>
+    </div>
+  </div>
+</section>
+
+<section class="vickis-day">
+  <div class="narrow fade-in">
+    <span class="eyebrow">A note for Vicki</span>
+    <h2>Your day, your way.</h2>
+    <p>You told us you tend to get stressed on important days. That you don't want logistical worry anywhere near you on the morning of your wedding. We heard that, and it shapes how we work.</p>
+    <div class="pull-quote">On the morning of your wedding, here is everything you are responsible for: nothing.</div>
+    <p>Juri and Eamon are on the ground from the moment your group lands. Vendor coordination, timing, translation, every "where do we put this?" question, every "what time does the bus leave?" question, every last-minute fix. Handled, in person, by us. Your only job that morning is to drink coffee and get ready with your people.</p>
+  </div>
+</section>
+
+<section class="why-mij">
+  <div class="container fade-in">
+    <span class="eyebrow">What you're paying for</span>
+    <h2>Married in Japan, end to end.</h2>
+    <div class="why-grid">
+      <div class="why-col">
+        <h4>We handle</h4>
+        <ul>
+          <li>Venue sourcing, negotiation, contracting</li>
+          <li>All vendor coordination in Japanese</li>
+          <li>Custom menu development with the chef</li>
+          <li>Florals, styling, decor procurement</li>
+          <li>Photography and videography sourcing</li>
+          <li>Hair and makeup booking and trials</li>
+          <li>Negotiated group hotel rates</li>
+          <li>Welcome dinner planning and booking</li>
+          <li>Group activities and excursions</li>
+          <li>Day-of execution, on the ground</li>
+          <li>Live translation, all day</li>
+          <li>Every "where do we put this?" question</li>
+        </ul>
+      </div>
+      <div class="why-col">
+        <h4>You handle</h4>
+        <ul>
+          <li>Legal courthouse marriage in Seattle</li>
+          <li>Save-the-dates and the guest list</li>
+          <li>Dress, suit, rings</li>
+          <li>Telling us your must-haves</li>
+          <li>Showing up</li>
+          <li>Being present</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fee-callout">
+      <span class="amount">$10,000</span>
+      <p style="margin:0">Included in every scenario above. Covers everything in the "we handle" column. Doesn't change with guest count. No vendor commissions, ever.</p>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="narrow fade-in">
+    <span class="eyebrow">After today</span>
+    <h2>Where we go from here.</h2>
+    <div class="pull-quote">Sit with this. Talk about which concept feels like yours.</div>
+    <p>We'll take your reactions from today's call and refine within a week. We iterate as many times as it takes to land on something that genuinely feels like you. When you're ready, we sign. 50% of the planning fee at signing, 50% at 90 days out from the wedding date.</p>
+    <p>One note on timing: 2027 peak dates fill 12 to 18 months out, especially the mid-May window. The earlier we lock the date, the more leverage we have on venue and vendor selection.</p>
+    <p style="margin-top:3rem;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--burgundy)">Eamon & Juri<br><span style="font-size:1rem;color:var(--dark);font-style:normal">Married in Japan</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Married in Japan</div>
+  <div class="meta">marriedinjapan.com · proposal prepared April 2026</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
